@@ -17,7 +17,14 @@ function transformToAssocArray( prmstr ) {
 }
 var targetid = getSearchParameters()['trg'];
 
-fetch('https://pastebin.com/raw/c5Curk38').then( (response) => {
+fetch('https://pastebin.com/raw/c5Curk38',
+      {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'text/plain'
+        }
+      }).then( (response) => {
   if (response.status === 200) {
     console.log(response.body)
   } else {
