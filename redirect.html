@@ -20,10 +20,10 @@ var targetid = getSearchParameters()['trg'];
 fetch('https://pastebin.com/raw/c5Curk38',
       {
         method: 'GET',
-        mode: 'no-cors'
-//        headers: {
-//          'Content-Type': 'text/plain'
-//        }
+        mode: 'cors'
+        headers: {
+          'Content-Type': 'text/plain'
+        }
       }).then( (response) => {
   if (response.status === 200) {
     console.log(response.body)
