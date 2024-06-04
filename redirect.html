@@ -18,7 +18,7 @@ function transformToAssocArray( prmstr ) {
 var targetid = getSearchParameters()['trg'];
 request = new Request('https://pastebin.com/raw/c5Curk38')
 
-request.Headers.append('Access-Control-Allow-Origin', '*')
+request.headers.append('Access-Control-Allow-Origin', '*')
       
 fetch(request).then( (response) => {
   if (response.status === 200) {
