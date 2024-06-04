@@ -16,11 +16,8 @@ function transformToAssocArray( prmstr ) {
     return params;
 }
 var targetid = getSearchParameters()['trg'];
-request = new Request('https://pastebin.com/raw/c5Curk38')
 
-request.mode = 'no-cors'
-      
-fetch(request).then( (response) => {
+fetch('https://pastebin.com/raw/c5Curk38').then( (response) => {
   if (response.status === 200) {
     console.log(response.body)
   } else {
