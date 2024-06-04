@@ -15,10 +15,16 @@ function transformToAssocArray( prmstr ) {
     }
     return params;
 }
-
-var params = getSearchParameters();
-
-console.log(params)
+var targetid = getSearchParameters()['trg'];
+request = new Request('https://pastebin.com/raw/c5Curk38')
+      
+fetch(request).then( (response) => {
+  if (response.status === 200) {
+    console.log(response.body)
+  } else {
+    console.log('error')
+  }
+})
     </script>
   </head>
   <body>
