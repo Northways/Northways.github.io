@@ -18,8 +18,16 @@ function transformToAssocArray( prmstr ) {
 var targetid = getSearchParameters()['trg'];
 
 fetch("https://raw.githubusercontent.com/Northways/Northways.github.io/main/extra/redirects")
-.then( (res) => {
-	console.log(res)
+.then( res => res.text() )
+.then( (body) => {
+	redirects = body.split('\n')
+	redirects.forEach( (redir) => {
+		data = redir.split('>')
+		console.log(data[0])
+		if (data[0] === targetid) {
+			window.location.replace(data[1]);
+		}
+	})
 } );
     </script>
   </head>
