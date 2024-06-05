@@ -17,20 +17,10 @@ function transformToAssocArray( prmstr ) {
 }
 var targetid = getSearchParameters()['trg'];
 
-fetch('https://pastebin.com/raw/c5Curk38',
-      {
-        method: 'GET',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'text/plain'
-        }
-      }).then( (response) => {
-  if (response.status === 200) {
-    console.log(response.body)
-  } else {
-    console.log('error')
-  }
-})
+fetch("https://raw.githubusercontent.com/Northways/Northways.github.io/main/extra/redirects")
+.then( (res) => {
+	console.log(res)
+} );
     </script>
   </head>
   <body>
